@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMascota"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    card_view:cardCornerRadius="@dimen/corner_radius_cardview"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+
+        >
+        <ImageView
+            android:id="@+id/ivFoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/perro1"
+            android:layout_gravity="center_horizontal"
+
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="start|right"
+
+                >
+
+                <Button
+                    android:id="@+id/btnRaiting"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="left"
+                    android:background="@mipmap/ic_db"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/nombre_mascota"
+                    android:textSize="20sp"
+                    android:textColor="#0d0505"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end|right"
+
+
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/tvRaiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/raiting"
+                    android:textSize="20dp"
+                    android:textColor="#0d0505"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+
+                    />
+
+                <Button
+                    android:id="@+id/btnRaitingAcum"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/ic_dby"
+
+                    />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.AppBarOverlay"
+
+    tools:context=".MascotasVotadas">
+
+    <include layout="@layout/actionbar"
+        android:id="@+id/lytoolbar"
+
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvMascotasVotadas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@+id/lytoolbar"
+
+        android:paddingTop="@dimen/abc_action_bar_progress_bar_size">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</RelativeLayout>
