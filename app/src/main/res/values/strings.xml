@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Mis Mascotas</string>
+    <string name="app_name">Petagram</string>
     <string name="action_favoritas">Favoritas</string>
-    <string name="nombre_mascota">Perro</string>
+    <string name="nombre_mascota"> </string>
     <string name="raiting">5</string>
+    <string name="plikes">0</string>
     <string name="menu_contacto">Contacto</string>
     <string name="menu_acercade">Acerca De</string>
     <string name="nombre">Nombre:</string>
@@ -11,6 +12,10 @@
     <string name="boton_enviar_comentarios">Enviar Comentarios</string>
     <string name="Bio">Aplicación Elaborada por NEO para Coursera-UNAM</string>
     <string name="mas_votadas">5 Mascotas más Votadas</string>
+    <string name="usuario"> Esscribe Nombre de Usuario</string>
+    <string name="guardar_cuenta">Guardar Cuenta</string>
+    <string name="menu_configurar">Configurar Cuenta</string>
+    <string name="user_id">alnegasoft</string>
 
 
 </resources>

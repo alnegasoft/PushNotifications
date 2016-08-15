@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    public String userId="0";
+    public String fotoPerfil="0";
+    public String nombreCuenta="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void irConfigurarCuenta(){
+        Intent intent = new Intent(this , ConfigurarCuenta.class);
+        startActivity(intent);
+    }
 
 
 
@@ -80,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mContacto:
                 irFormulario();
                 break;
+            case R.id.mConfigurarCuenta:
+                irConfigurarCuenta();
+                break;
             case R.id.mAcercaDe:
                 irAcercaDe();
                 break;
@@ -96,7 +107,32 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new MascotasFragment());
-        fragments.add((new PerfilFragment()));
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            userId = (String) extras.get("userId");
+            fotoPerfil = (String) extras.get("fotoPerfil");
+            nombreCuenta = (String) extras.get("nombreCuenta");
+            Toast.makeText(MainActivity.this, "Main Activity UserId: "+ userId, Toast.LENGTH_SHORT).show();
+
+            if (!userId.equals("0")) {
+
+                PerfilFragment perfilFragment =  new PerfilFragment();
+                Bundle arguments = new Bundle(3);
+
+                arguments.putString("userId", userId);
+                arguments.putString("fotoPerfil", fotoPerfil);
+                arguments.putString("nombreCuenta", nombreCuenta);
+
+                perfilFragment.setArguments(arguments);
+
+                fragments.add(perfilFragment);
+            }
+
+        }
+
+
         return  fragments;
     }
 
@@ -105,7 +141,17 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.mipmap.ic_home);
-        tabLayout.getTabAt(1).setIcon(R.mipmap.ic_perfil);
+
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        if (!userId.equals("0")){
+            tabLayout.getTabAt(1).setIcon(R.mipmap.ic_perfil);
+            tabLayout.getTabAt(1).select();
+        }
+
+
+
     }
 
 

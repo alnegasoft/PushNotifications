@@ -22,13 +22,13 @@ public class ConstructorBD {
 
     public ArrayList<Mascota> obtenerDatos(){
         BaseDatos db = new BaseDatos(context);
-        insertarMascotas(db);
+        //insertarMascotas(db);
         return db.obtenerTodasLasMascotas();
     }
 
     public ArrayList<Mascota> obtenerMascotasVotadas(){
         BaseDatos db = new BaseDatos(context);
-        insertarMascotas(db);
+        //insertarMascotas(db);
         return db.cincoMascotasMasVotadas();
     }
 

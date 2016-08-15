@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import mx.alnegasoft.mascotamd.pojo.Mascota;
@@ -40,9 +42,14 @@ public class PerfilMascotaAdaptador extends RecyclerView.Adapter<PerfilMascotaAd
     @Override
     public void onBindViewHolder(final PerfilMascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
-        mascotaViewHolder.ivFotoPerfil.setImageResource(mascota.getFoto());
-        mascotaViewHolder.tvNombrePerfil.setText(mascota.getNombre());
-        mascotaViewHolder.tvRaitingPerfil.setText(Integer.toString(mascota.getRaiting()));
+        //mascotaViewHolder.ivFotoPerfil.setImageResource(mascota.getFoto());
+        Picasso.with(activity)
+                .load(mascota.getUrlFoto())
+                .placeholder(R.drawable.perro1)
+                .into(mascotaViewHolder.ivFotoPerfil);
+
+        //mascotaViewHolder.tvNombrePerfil.setText(mascota.getNombre());
+        mascotaViewHolder.tvRaitingPerfil.setText(Integer.toString(mascota.getLikes()));
 
     }
 
@@ -58,12 +65,12 @@ public class PerfilMascotaAdaptador extends RecyclerView.Adapter<PerfilMascotaAd
         private TextView tvRaitingPerfil;
 
 
+
         public PerfilMascotaViewHolder(View itemView) {
             super(itemView);
             ivFotoPerfil          = (ImageView) itemView.findViewById(R.id.ivFotoPerfil);
             tvNombrePerfil        = (TextView) itemView.findViewById(R.id.tvNombrePerfil);
             tvRaitingPerfil       = (TextView) itemView.findViewById(R.id.tvRaitingPerfil);
-
 
         }
     }

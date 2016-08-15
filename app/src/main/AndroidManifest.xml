@@ -28,7 +28,8 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".ComentariosActivity" />
-        <activity android:name=".AcercaDeActivity"></activity>
+        <activity android:name=".AcercaDeActivity" />
+        <activity android:name=".ConfigurarCuenta"></activity>
     </application>
 
 </manifest>

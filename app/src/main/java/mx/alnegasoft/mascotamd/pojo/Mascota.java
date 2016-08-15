@@ -5,27 +5,17 @@ package mx.alnegasoft.mascotamd.pojo;
  */
 public class Mascota {
 
-    private int id;
+    private String id;
     private String nombre;
-    private int foto;
-    private int raiting;
+    private String urlFoto;
+    private int likes = 0;
+    private String urlFotoPerfil;
 
-    public Mascota(int id, String nombre, int foto, int raiting) {
-        this.id = id;
-        this.nombre = nombre;
-        this.foto = foto;
-        this.raiting = raiting;
-    }
-
-    public Mascota() {
-
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -37,19 +27,40 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getUrlFoto() {
+        return urlFoto;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
-    public int getRaiting() {
-        return raiting;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setRaiting(int raiting) {
-        this.raiting = raiting;
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public Mascota(String id, String nombre, String urlFoto, int likes, String urlFotoPerfil) {
+        this.id = id;
+        this.nombre = nombre;
+        this.urlFoto = urlFoto;
+        this.likes = likes;
+        this.urlFotoPerfil = urlFotoPerfil;
+    }
+
+    public Mascota() {
+
+    }
+
+
+    public String getUrlFotoPerfil() {
+        return urlFotoPerfil;
+    }
+
+    public void setUrlFotoPerfil(String urlFotoPerfil) {
+        this.urlFotoPerfil = urlFotoPerfil;
     }
 }

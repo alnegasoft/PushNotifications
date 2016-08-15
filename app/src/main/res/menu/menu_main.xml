@@ -17,8 +17,15 @@
     </item>
 
     <item
-        android:id="@+id/mAcercaDe"
+        android:id="@+id/mConfigurarCuenta"
         android:orderInCategory="3"
+        android:title="@string/menu_configurar"
+        >
+    </item>
+
+    <item
+        android:id="@+id/mAcercaDe"
+        android:orderInCategory="4"
         android:title="@string/menu_acercade"
         >
     </item>
