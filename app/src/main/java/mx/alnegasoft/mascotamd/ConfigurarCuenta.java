@@ -56,7 +56,7 @@ public class ConfigurarCuenta extends AppCompatActivity {
         android.support.design.widget.TextInputLayout tilUsuario;
         tilUsuario = (android.support.design.widget.TextInputLayout) findViewById(R.id.tilUsuario);
         final String nombreUsuario = tilUsuario.getEditText().getText().toString();
-        Toast.makeText(ConfigurarCuenta.this, nombreUsuario, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(ConfigurarCuenta.this, nombreUsuario, Toast.LENGTH_SHORT).show();
 
         Call<UserResponse> userResponseCall = endPointsApi.getUserId(nombreUsuario ,ConstantesRestApi.ACCESS_TOKEN );
 
@@ -67,9 +67,9 @@ public class ConfigurarCuenta extends AppCompatActivity {
                 usuarios =  userResponse.getUsuarios();
 
 
-                Toast.makeText(getBaseContext(), "Configurar Cuenta Usuario: " + usuarios.get(0).getId().toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getBaseContext(), "Configurar Cuenta Foto Perfil: " + usuarios.get(0).getUrlFotoPerfil().toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getBaseContext(), "Nombre Cuenta: " + nombreUsuario, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getBaseContext(), "Configurar Cuenta Usuario: " + usuarios.get(0).getId().toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getBaseContext(), "Configurar Cuenta Foto Perfil: " + usuarios.get(0).getUrlFotoPerfil().toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getBaseContext(), "Nombre Cuenta: " + nombreUsuario, Toast.LENGTH_SHORT).show();
                 //mostrarContactosRV();
 
                 Intent intent = new Intent(getBaseContext() ,MainActivity.class);

@@ -112,7 +112,6 @@ public class PerfilFragment extends Fragment {
         Gson gsonMediaUserId = restApiAdapter.construyeGsonDeserializadorMediaUserId();
         EndPointsApi endPointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaUserId);
 
-
         String userId="0";
         if (getArguments() != null) {
             userId = getArguments().get("userId").toString();
@@ -127,10 +126,7 @@ public class PerfilFragment extends Fragment {
 
             tvNombreCuenta = (TextView) v.findViewById(R.id.tvNombreCuenta);
             tvNombreCuenta.setText(nombreCuenta);
-
-            Toast.makeText(getContext(), "Main Activity UserId: "+ userId, Toast.LENGTH_SHORT).show();
-
-
+            //Toast.makeText(getContext(), "Main Activity UserId: "+ userId, Toast.LENGTH_SHORT).show();
             Call<MediaResponse> mediaResponseCall = endPointsApi.getRecentMediaUser(userId);
             //Call<MediaResponse> mediaResponseCall = endPointsApi.getRecentMediaUser();
 

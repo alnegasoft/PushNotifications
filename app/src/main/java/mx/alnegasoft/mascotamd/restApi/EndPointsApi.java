@@ -3,8 +3,12 @@ package mx.alnegasoft.mascotamd.restApi;
 import mx.alnegasoft.mascotamd.R;
 import mx.alnegasoft.mascotamd.restApi.model.MediaResponse;
 import mx.alnegasoft.mascotamd.restApi.model.UserResponse;
+import mx.alnegasoft.mascotamd.restApi.model.UsuarioResponse;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -36,5 +40,10 @@ public interface EndPointsApi {
 
 
 //https://api.instagram.com/v1/users/search?q=alnegasoft&access_token=3648605337.9793ffe.823c3055a691442f94e08157e7c6fa34
+
+
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.KEY_POST_ID_TOKEN)
+    Call<UsuarioResponse> registrarUsuario(@Field("id_dispositivo") String id_dispositivo, @Field("id_instagram") String id_instagram );
 
 }

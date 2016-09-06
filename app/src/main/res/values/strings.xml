@@ -16,6 +16,7 @@
     <string name="guardar_cuenta">Guardar Cuenta</string>
     <string name="menu_configurar">Configurar Cuenta</string>
     <string name="user_id">alnegasoft</string>
+    <string name="menu_recibir_notificaciones">Recibir Notificaciones</string>
 
 
 </resources>

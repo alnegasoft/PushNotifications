@@ -30,4 +30,8 @@ public class ConstantesRestApi {
     //public static final String URL_GET_USER_ID = KEY_USERS_SEARCH + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
     //https://api.instagram.com/v1/users/search?q=alnegasoft&access_token=3648605337.9793ffe.823c3055a691442f94e08157e7c6fa34
 
+
+    public static final String ROOT_URL_HEROKU = "https://rocky-island-89583.herokuapp.com/";
+    public static final String KEY_POST_ID_TOKEN = "token-device/";
+
 }
