@@ -10,6 +10,7 @@ public class Mascota {
     private String urlFoto;
     private int likes = 0;
     private String urlFotoPerfil;
+    private String idFoto;
 
     public String getId() {
         return id;
@@ -43,12 +44,13 @@ public class Mascota {
         this.likes = likes;
     }
 
-    public Mascota(String id, String nombre, String urlFoto, int likes, String urlFotoPerfil) {
+    public Mascota(String id, String nombre, String urlFoto, int likes, String urlFotoPerfil, String idFoto) {
         this.id = id;
         this.nombre = nombre;
         this.urlFoto = urlFoto;
         this.likes = likes;
         this.urlFotoPerfil = urlFotoPerfil;
+        this.idFoto =  idFoto;
     }
 
     public Mascota() {
@@ -62,5 +64,13 @@ public class Mascota {
 
     public void setUrlFotoPerfil(String urlFotoPerfil) {
         this.urlFotoPerfil = urlFotoPerfil;
+    }
+
+    public String getIdFoto() {
+        return idFoto;
+    }
+
+    public void setIdFoto(String idFoto) {
+        this.idFoto = idFoto;
     }
 }

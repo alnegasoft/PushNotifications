@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 import mx.alnegasoft.mascotamd.adaptader.PageAdapter;
 import mx.alnegasoft.mascotamd.fragment.MascotasFragment;
+import mx.alnegasoft.mascotamd.fragment.MascotasTimelineFragment;
 import mx.alnegasoft.mascotamd.fragment.PerfilFragment;
 import mx.alnegasoft.mascotamd.restApi.EndPointsApi;
 import mx.alnegasoft.mascotamd.restApi.adapter.RestApiAdapter;
@@ -29,6 +31,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private TabLayout tabLayout;
     private ViewPager viewPager;
     public String userId="0";
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         setUpViewPager();
+
+        if(getIntent().getExtras() != null){
+            for(String key: getIntent().getExtras().keySet()){
+                String value = getIntent().getExtras().getString(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }
 
     }
 
@@ -84,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TOKEN", token);
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         EndPointsApi endpoints = restApiAdapter.establecerConexionRestAPI();
-        Call<UsuarioResponse> usuarioResponseCall =  endpoints.registrarUsuario(token, userId);
+        Call<UsuarioResponse> usuarioResponseCall =  endpoints.registrarUsuario(token, userId, userId,"0");
 
         usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
             @Override
@@ -151,12 +164,19 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new MascotasFragment());
+        fragments.add(new MascotasTimelineFragment());
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         if (extras != null) {
-            userId = (String) extras.get("userId");
+        //if (getIntent().getExtras() != null) {
+
+            if (extras.get("userId")== null){
+                userId="0";}
+            else{
+                userId = (String) extras.get("userId");
+            }
+
             fotoPerfil = (String) extras.get("fotoPerfil");
             nombreCuenta = (String) extras.get("nombreCuenta");
             //Toast.makeText(MainActivity.this, "Main Activity UserId: "+ userId, Toast.LENGTH_SHORT).show();
@@ -198,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 
 }

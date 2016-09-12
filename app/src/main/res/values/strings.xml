@@ -17,6 +17,8 @@
     <string name="menu_configurar">Configurar Cuenta</string>
     <string name="user_id">alnegasoft</string>
     <string name="menu_recibir_notificaciones">Recibir Notificaciones</string>
+    <string name="titulo_timeline"> Timeline Instagram </string>
+
 
 
 </resources>

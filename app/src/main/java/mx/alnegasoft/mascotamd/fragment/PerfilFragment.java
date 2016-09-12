@@ -70,6 +70,15 @@ public class PerfilFragment extends Fragment {
 
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvPerfilMascotas);
 
+/*        listaMascotas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //listaMascotas.getChildPosition(v)
+                // Toast.makeText(getContext(), listaMascotas.getChildPosition(v), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Gracias", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
         //LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         //llm.setOrientation(LinearLayoutManager.VERTICAL);
         //listaMascotas.setLayoutManager(llm);
@@ -77,8 +86,9 @@ public class PerfilFragment extends Fragment {
         glm.setOrientation(GridLayoutManager.VERTICAL);
         listaMascotas.setLayoutManager(glm);
 
-
         obtenerMediaUserId();
+
+
 //        inicializarListaMascotas();
 //        inicializarAdaptador();
         return v;
@@ -89,6 +99,8 @@ public class PerfilFragment extends Fragment {
         listaMascotas.setAdapter(adaptador);
 
     }
+
+
 
 //    public void mostrarMediaUserIdRV() {
 //        iRecyclerViewFragmentView.inicializarAdaptadorRV(iRecyclerViewFragmentView.crearAdaptador(contactos));
@@ -146,7 +158,6 @@ public class PerfilFragment extends Fragment {
             });
         }
     }
-
 
 
 }

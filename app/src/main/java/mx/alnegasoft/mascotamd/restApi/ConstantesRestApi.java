@@ -21,6 +21,12 @@ public class ConstantesRestApi {
     //public static final String KEY_GET_RECENT_MEDIA_USER_ID = "users/3648605337/media/recent/?";
     public static final String URL_GET_RECENT_MEDIA_USER_ID = KEY_GET_RECENT_MEDIA_USER_ID + KEY_ACCESS_TOKEN_MEDIA_USER + ACCESS_TOKEN;
 
+
+    public static final String KEY_GET_USERS_TIMELINE = "users/self/follows?";
+    public static final String URL_GET_USERS_TIMELINE = KEY_GET_USERS_TIMELINE + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
+
+    //https://api.instagram.com/v1/users/self/follows?access_token=3648605337.bef215d.5a54ae5f797a4ec2b2b2fef2df1f5832
+
     //https://api.instagram.com/v1/users/3648605337/media/recent/?access_token=3648605337.bef215d.5a54ae5f797a4ec2b2b2fef2df1f5832
     //https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=ACCESS-TOKEN
     //public static final String KEY_GET_RECENT_MEDIA_USER = "users/self/media/recent/";
@@ -31,7 +37,9 @@ public class ConstantesRestApi {
     //https://api.instagram.com/v1/users/search?q=alnegasoft&access_token=3648605337.9793ffe.823c3055a691442f94e08157e7c6fa34
 
 
-    public static final String ROOT_URL_HEROKU = "https://rocky-island-89583.herokuapp.com/";
+    public static final String ROOT_URL_HEROKU = "https://infinite-scrubland-18806.herokuapp.com/";
     public static final String KEY_POST_ID_TOKEN = "token-device/";
+
+    public static final String KEY_LIKE = "likes/{id}/{id_instagram}/{nombre_usuario}/{url_foto_perfil}";
 
 }

@@ -25,6 +25,8 @@ public interface EndPointsApi {
     Call<MediaResponse> getRecentMediaUser(@Path("userid") String userid);
     //Call<MediaResponse> getRecentMediaUser();
 
+    @GET(ConstantesRestApi.URL_GET_USERS_TIMELINE)
+    Call<UserResponse> getUsersTimeline();
 
     //users/3648605337/media/recent/?access_token=3648605337.bef215d.5a54ae5f797a4ec2b2b2fef2df1f5832
 
@@ -44,6 +46,18 @@ public interface EndPointsApi {
 
     @FormUrlEncoded
     @POST(ConstantesRestApi.KEY_POST_ID_TOKEN)
-    Call<UsuarioResponse> registrarUsuario(@Field("id_dispositivo") String id_dispositivo, @Field("id_instagram") String id_instagram );
+    Call<UsuarioResponse> registrarUsuario(@Field("id_dispositivo") String id_dispositivo,
+                                           @Field("id_instagram") String id_instagram,
+                                           @Field ("id_foto") String id_foto,
+                                           @Field("foto_likes") String foto_likes
+    );
+
+    @GET(ConstantesRestApi.KEY_LIKE)
+    Call<UsuarioResponse> darLike(@Path("id") String id,
+                                  @Path("id_instagram") String id_instagram,
+                                  @Path("nombre_usuario") String nombre_usuario,
+                                  @Path("url_foto_perfil") String url_foto_perfil
+    );
+
 
 }

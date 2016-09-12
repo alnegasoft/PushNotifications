@@ -8,8 +8,8 @@
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/circularImageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/perro1"
         android:layout_gravity="center_horizontal"
         app:civ_border="true"
@@ -26,7 +26,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="Nombre Cuenta"
-             android:textSize="30sp"
+             android:textSize="20sp"
              android:gravity="center_horizontal"
 
              />
